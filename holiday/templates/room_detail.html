@@ -1,0 +1,24 @@
+{{myroom.content}}
+
+<br>
+{% if start_room and myroom.holliday.name == 'Passover' %}
+<br>
+    <a href="{% url 'set_afi_komen' myroom.slug %}">Hide The Afi Komen</a>
+    <br>
+    <br>
+    <br>
+    Then enter the:
+{% endif %}
+
+{% for child_room in child_rooms %}
+    <li><a href="{% url 'room_detail' child_room.slug %}">{{ child_room.name }}</a></li>
+{% endfor %}
+
+<br>
+<br>
+
+{% if myroom.afi_komen %}
+    YAY
+{% elif myroom.holliday.name == 'Passover' and not child_rooms %}
+    No Afi Komen Here
+{% endif %}

@@ -1,0 +1,4 @@
+Choose Your Holliday
+{% for start_room in start_rooms %}
+    <li><a href="{% url 'room_detail' start_room.slug %}">{{ start_room.holliday.name }}</a></li>
+{% endfor %}
