@@ -41,8 +41,7 @@
 
 {% for child_room in child_rooms %}
     <a href="{% url 'room_detail' child_room.slug %}"><h1>{{child_room.name}}</h1></a>
-    {% comment %} <img src="{{child_room.image_url}}"> {% endcomment %}
-    <img src="http://i.imgur.com/Wgrvbib.jpg">
+    <img src="{{child_room.image_url}}">
     
 {% endfor %}
 
