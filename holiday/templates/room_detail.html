@@ -25,11 +25,13 @@
 
 {% if start_room and myroom.holliday.name == 'Passover' %}
     <a href="{% url 'set_afi_komen' myroom.slug %}">Hide The Afi Komen</a>
+    <img src="{{myroom.image_url}}"></a>
 {% endif %}
 <br>
 <br>
 <br>
 <h1>{{myroom.name}}</h1>
+<h2>{{myroom.content}}</h2>
 
 {% for child_room in child_rooms %}
     <a href="{% url 'room_detail' child_room.slug %}">
