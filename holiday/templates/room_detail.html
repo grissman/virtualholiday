@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .grid-container {
+        display: grid;
+        height: 400px;
+        align-content: space-evenly;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        background-color: #FFD0D0;
+        padding: 10px;
+    }
+
+    .grid-container>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    .room-image {
+        border-radius: 10%;
+        border-color: white;
+    }
+</style>
+</head>
+<body>
+
 {{myroom.content}}
 
 <br>
@@ -11,7 +40,10 @@
 {% endif %}
 
 {% for child_room in child_rooms %}
-    <li><a href="{% url 'room_detail' child_room.slug %}">{{ child_room.name }}</a></li>
+    <a href="{% url 'room_detail' child_room.slug %}"><h1>{{child_room.name}}</h1></a>
+    {% comment %} <img src="{{child_room.image_url}}"> {% endcomment %}
+    <img src="http://i.imgur.com/Wgrvbib.jpg">
+    
 {% endfor %}
 
 <br>
@@ -22,3 +54,7 @@
 {% elif myroom.holliday.name == 'Passover' and not child_rooms %}
     No Afi Komen Here
 {% endif %}
+
+</body>
+
+</html>

@@ -30,6 +30,7 @@ class Room(models.Model):
 	
 	### Attributes
 	name = models.CharField(max_length=200)
+	image_url = models.URLField(max_length=200, blank=True)
 	page_number = models.PositiveIntegerField(default=0)
 	content = models.CharField(max_length=50000, blank=True)
 
