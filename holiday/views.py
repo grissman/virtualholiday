@@ -25,6 +25,6 @@ def set_afi_komen(request, slug):
             room.afi_komen = True
             room.save()
             break
-    return redirect('room_detail', slug=slug)
+    return redirect('/holiday/room/house', slug=slug)
 
 

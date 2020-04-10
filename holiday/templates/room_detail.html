@@ -23,21 +23,19 @@
 </head>
 <body>
 
-<h1>{{myroom.name}}</h1
-
-<br>
 {% if start_room and myroom.holliday.name == 'Passover' %}
-<br>
     <a href="{% url 'set_afi_komen' myroom.slug %}">Hide The Afi Komen</a>
-    <br>
-    <br>
-    <br>
-    Then enter the:
 {% endif %}
+<br>
+<br>
+<br>
+<h1>{{myroom.name}}</h1
 
 {% for child_room in child_rooms %}
     <a href="{% url 'room_detail' child_room.slug %}">
     <img src="{{child_room.image_url}}"></a>
+
+
     
 {% endfor %}
 
@@ -45,7 +43,8 @@
 <br>
 
 {% if myroom.afi_komen %}
-    YAY
+    You Win!!
+    <img src="https://i.imgur.com/nTdlE9x.jpg">
 {% elif myroom.holliday.name == 'Passover' and not child_rooms %}
     No Afi Komen Here
 {% endif %}
