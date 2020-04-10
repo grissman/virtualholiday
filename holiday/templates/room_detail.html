@@ -19,15 +19,11 @@
         font-size: 30px;
     }
 
-    .room-image {
-        border-radius: 10%;
-        border-color: white;
-    }
 </style>
 </head>
 <body>
 
-{{myroom.content}}
+<h1>{{myroom.name}}</h1
 
 <br>
 {% if start_room and myroom.holliday.name == 'Passover' %}
@@ -40,8 +36,8 @@
 {% endif %}
 
 {% for child_room in child_rooms %}
-    <a href="{% url 'room_detail' child_room.slug %}"><h1>{{child_room.name}}</h1></a>
-    <img src="{{child_room.image_url}}">
+    <a href="{% url 'room_detail' child_room.slug %}">
+    <img src="{{child_room.image_url}}"></a>
     
 {% endfor %}
 
