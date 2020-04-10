@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+### my specific stuff
+*.pyc
+db.sqlite3
+__pycache__
+local_settings.py
+.DS_Store
+scratchpad.py
+comments.txt
+.git
+.vscode
+dump.rdb
+cert.pem
+key.pem
