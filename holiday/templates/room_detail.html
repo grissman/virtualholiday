@@ -29,14 +29,11 @@
 <br>
 <br>
 <br>
-<h1>{{myroom.name}}</h1
+<h1>{{myroom.name}}</h1>
 
 {% for child_room in child_rooms %}
     <a href="{% url 'room_detail' child_room.slug %}">
     <img src="{{child_room.image_url}}"></a>
-
-
-    
 {% endfor %}
 
 <br>

@@ -13,6 +13,7 @@ def room_detail(request, slug):
     if myroom.parent_room == None:
         start_room = True
     child_rooms = Room.objects.filter(parent_room=myroom)
+    print(child_rooms)
     return render(request, 'room_detail.html', context= {'myroom':myroom, 'start_room':start_room, 'child_rooms':child_rooms},)
 
 def set_afi_komen(request, slug):
